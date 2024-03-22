@@ -1,16 +1,3 @@
-# RANSAC
-Fit model to noisy data
-
-# Syntax
-```matlab
-[model] = ransac(data,fitFcn,distFcn,sampleSize,maxDistance)
-```
-
-# Description
-```[model] = ransac(data,fitFcn,distFcn,sampleSize,maxDistance)``` fits a model to noisy data using the random sample consensus (RANSAC) algorithm.
-
-# Examples
-```matlab
 for i = 1:200
     x(i) = rand()*100;
     b = (rand()-0.5)*10;
@@ -36,8 +23,3 @@ hold on;
 plot(x, y_1);
 plot(x, y_2, 'LineWidth', 1.5, 'Color', 'b');
 hold off;
-```
-<img src="image/result.png" width="800" />
-
-# References
-・https://www.mathworks.com/help/vision/ref/ransac.html#bvhr3vi-fitFcn
