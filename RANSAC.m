@@ -3,13 +3,13 @@ function [model] = ransac(data, fitFun, distFun, sampleSize, maxDistance)
     y = data(:, 2);
 
     num_y = length(y);
-    threshP = num_y * 0.65;  % 65% of samples to fit
+    threshP = num_y * 0.8;  % 65% of samples to fit
 
     model = [];
     error = [];
     i = 0;
     while i < 1000
-        sample.idx = randsample(num_y, sampleSize);
+        sample.idx = randperm(num_y, sampleSize);
         sample.idx = sort(sample.idx);
         
         data_tmp= [x(sample.idx), y(sample.idx)];
